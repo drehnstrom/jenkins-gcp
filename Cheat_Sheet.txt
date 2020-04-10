@@ -1,11 +1,18 @@
 # Build Docker Image
 docker build -t [image-name] .
-
 # For example:
-docker build -t drehnstrom/jenkins-gcp:v0.1 .
+docker build -t drehnstrom/jenkins-gcp:v0.2 .
+
 
 # run the container
 docker run -p 8080:8080 -p 50000:50000 [image-name]
-
 # For example: 
-docker run -p 8080:8080 -p 50000:50000 drehnstrom/jenkins-gcp:v0.1
+docker run -p 8080:8080 -p 50000:50000 drehnstrom/jenkins-gcp:v0.2
+
+
+# To run and specify a home folder
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:~/jenkins_home [image-name]
+# For example:
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:~/jenkins_home drehnstrom/jenkins-gcp:v0.2
+
+
