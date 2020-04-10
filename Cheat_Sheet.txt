@@ -1,0 +1,12 @@
+# Build Docker Image
+docker build -t [image-name] .
+
+# For example:
+docker build -t drehnstrom/jenkins-gcp:v0.1 .
+
+
+# run the container
+docker run -p 8080:8080 -p 50000:50000 [image-name]
+
+# For example: 
+docker run -p 8080:8080 -p 50000:50000 drehnstrom/jenkins-gcp:v0.1
