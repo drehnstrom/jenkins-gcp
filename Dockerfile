@@ -11,6 +11,9 @@ RUN curl https://sdk.cloud.google.com > /install.sh
 RUN bash /install.sh --disable-prompts --install-dir=/
 ENV PATH=/google-cloud-sdk/bin:$PATH
 
+# Install kubectl
+RUN gcloud components install kubectl
+
 # Install Terraform
 RUN mkdir /tf
 RUN curl https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip > terraform.zip
