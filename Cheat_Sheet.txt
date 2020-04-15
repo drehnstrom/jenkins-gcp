@@ -16,9 +16,6 @@ docker run -p 8080:8080 -p 50000:50000 drehnstrom/jenkins-gcp:v0.2
 # 2. Service the Service Account to allow full access to all Cloud APIs
 # 3. Check box to allow HTTP
 
-docker run -p 80:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home [image-name]
+docker run -d -p 80:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home [image-name]
 For example:
-docker run -p 80:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home drehnstrom/jenkins-gcp:v0.2
-
-
-
+docker run -d -p 80:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home drehnstrom/jenkins-gcp:v0.2
